@@ -18,7 +18,6 @@ export default function Home() {
         setError(data.error);
       } else {
         setProducts(data);
-        console.log(data);
         const imagesData = data?.map(
           (item) => `${API}/product/photo/${item._id}`
         );
@@ -29,7 +28,6 @@ export default function Home() {
   useEffect(() => {
     loadAllProduct();
   }, []);
-  console.log("sdasf", images);
   return (
     <Base>
       <div className={styles.slider}>

@@ -26,7 +26,6 @@ const UpdateCategory = ({ match }) => {
 
   const preload = (categoryId) => {
     getCategory(categoryId).then((data) => {
-      console.log(data);
       if (data.error) {
         setName({ error: data.error });
       } else {

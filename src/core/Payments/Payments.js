@@ -77,9 +77,7 @@ const Payments = ({ products, setReload = (f) => f, reload = undefined }) => {
           };
           createOrder(userId, token, orderData);
 
-          cartEmpty(() => {
-            console.log("did we got a crash?");
-          });
+          cartEmpty(() => {});
 
           setReload(!reload);
         })

@@ -17,7 +17,8 @@ const Card = ({
   const cartTitle = product ? product.name : "A photo from pexels";
   const cartDescription = product ? product.description : "Default description";
   const cartPrice = product ? product.price : "DEFAULT";
-  const stock = product.stock;
+  const stock = product ? product.stock : 0;
+  const category = product ? product.category.name : "default";
 
   const addToCart = () => {
     addItemToCart(product, () => setRedirect(true));
@@ -65,6 +66,7 @@ const Card = ({
       <ImageHelper product={product} />
       <p className={styles.name}>{cartTitle}</p>
       <p>{cartDescription}</p>
+      <p>{category}</p>
       <p className={styles.price}>{`${cartPrice} ₽`}</p>
       <div>{showAddtoCart(addtoCart)}</div>
       <div>{showRemoveFromCart(removeFromCart)}</div>
