@@ -1,0 +1,95 @@
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  width: 100%;
+  justify-content: space-between;
+}
+.navLinks {
+  display: flex;
+}
+.navLinksDesktop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.navLink {
+  font-weight: normal;
+  text-decoration: none!important;
+  color: #2a324b!important;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.navLinkActive {
+  font-weight: 500;
+}
+
+.navBurger {
+  background: url("./../../images/burger.svg") center no-repeat;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.navBurgerOpened {
+  background: url("./../../images/burger__close.svg") center no-repeat;
+}
+@media screen and (max-width: 767px) {
+  .navBurger {
+    visibility: visible;
+    z-index: 4;
+  }
+  .navLinks {
+    width: 100%;
+    background: #202020;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .navLinksWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 160px;
+  }
+  .navLink {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 28px;
+    display: none;
+  }
+  .navLinkActive {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 4px;
+  }
+
+  .navLinkShow {
+    display: block;
+    color: #ffffff!important;
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
+}
+@media screen and (max-width: 376px) {
+  .navBurger {
+    top: 15px;
+    right: 15px;
+  }
+  .navLinks {
+    width: 100%;
+  }
+}

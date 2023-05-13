@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 1372px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.error {
+  font-size: 40px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  padding: 20px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+
+.button {
+  background-color: #f2f3f8;
+  font-weight: 400;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #2a324b;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,47 @@
+.slider div div div div {
+  background-position: center center;
+}
+.slider div {
+  width: 100%;
+}
+.content {
+  max-width: 1372px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+}
+.header {
+  font-size: 50px;
+}
+.button {
+  background-color: #f2f3f8;
+  font-weight: 400;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #2a324b;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 963px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

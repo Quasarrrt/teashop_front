@@ -1,0 +1,30 @@
+.contacts {
+  display: flex;
+  max-width: 1372px;
+  justify-content: space-around;
+  margin: 100px auto auto;
+}
+.map {
+  width: 500px;
+  height: 400px;
+}
+@media screen and (max-width: 864px) {
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map {
+    width: 250px;
+    height: 250px;
+  }
+}

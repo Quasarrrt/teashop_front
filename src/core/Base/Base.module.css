@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #d1e0dd;
+  width: 100%;
+
+}
+
+.headerContainer {
+  width: 1372px;
+  height: 88px;
+  display: flex;
+  margin: 0 10px;
+}
+.image {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+}
