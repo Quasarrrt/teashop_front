@@ -3,6 +3,8 @@ import Base from "../../core/Base/Base";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../../auth/helper";
 import { getCategories, deleteCategory } from "../helper/adminapicall";
+import styles from "./ManageCategories.module.css";
+import cx from "classnames";
 
 const ManageCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -39,32 +41,36 @@ const ManageCategories = () => {
       <Link className="btn btn-info" to={`/admin/dashboard`}>
         <span className="">Обратно на панель админа</span>
       </Link>
-      <div className="row">
-        <div className="col-12">
-          <h2 className="text-center text-white my-3">Total 3 products</h2>
+      <div className={cx("row", styles.margins)}>
+        <div className={cx("col-12", styles.margins)}>
           {categories.map((category, index) => {
             return (
-              <div key={index} className="row text-center mb-2 ">
+              <div
+                key={index}
+                className={cx("row", " text-center", "mb-2", styles.mobile)}
+              >
                 <div className="col-4">
                   <h3 className="text-black text-left">{category.name}</h3>
                 </div>
-                <div className="col-4">
-                  <Link
-                    className="btn btn-success"
-                    to={`/admin/category/update/${category._id}`}
-                  >
-                    <span className="">Обновить</span>
-                  </Link>
-                </div>
-                <div className="col-4">
-                  <button
-                    onClick={() => {
-                      deleteThisCategory(category._id);
-                    }}
-                    className="btn btn-danger"
-                  >
-                    Удалить
-                  </button>
+                <div className={styles.mobileButtons}>
+                  <div className="col-4">
+                    <Link
+                      className="btn btn-success"
+                      to={`/admin/category/update/${category._id}`}
+                    >
+                      <span className="">Обновить</span>
+                    </Link>
+                  </div>
+                  <div className="col-4">
+                    <button
+                      onClick={() => {
+                        deleteThisCategory(category._id);
+                      }}
+                      className="btn btn-danger"
+                    >
+                      Удалить
+                    </button>
+                  </div>
                 </div>
               </div>
             );

@@ -7,3 +7,14 @@
 .root div {
   margin: 0 auto;
 }
+
+@media screen and (max-width: 963px) {
+  .panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    flex: initial;
+    gap: 40px;
+  }
+}
+

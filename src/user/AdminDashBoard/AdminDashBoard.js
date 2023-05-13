@@ -1,5 +1,6 @@
 import React from "react";
 import Base from "../../core/Base/Base";
+import cx from "classnames";
 import { isAuthenticated } from "../../auth/helper";
 import { Link } from "react-router-dom";
 import styles from "./AdminDashBoard.module.css";
@@ -58,7 +59,7 @@ const AdminDashBoard = () => {
   return (
     <Base className={styles.root}>
       <div className="row container">
-        <div className="col-3">{adminLeftSide()}</div>
+        <div className={cx("col-3", styles.panel)}>{adminLeftSide()}</div>
         <div className="col-9">{adminRightSide()}</div>
       </div>
     </Base>

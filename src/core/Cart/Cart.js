@@ -45,12 +45,15 @@ const Cart = () => {
           )}
         </div>
         {!isAuthenticated() && (
-          <NavLink className="btn btn-info h-100" to="/signin">
+          <NavLink
+            to="/signin"
+            className={cx("btn btn-info h-100", styles.button)}
+          >
             Войти в аккаунт для покупки
           </NavLink>
         )}
         {isAuthenticated() && isAuthenticated().user.role === 0 && (
-          <div>
+          <div className={styles.button}>
             <Payments products={products} setReload={setReload} />
           </div>
         )}

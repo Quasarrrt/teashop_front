@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./ManageProducts.module.css";
 import { isAuthenticated } from "../../auth/helper";
 import { getProducts, deleteProduct } from "../helper/adminapicall";
+import cx from "classnames";
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -44,27 +45,32 @@ const ManageProducts = () => {
         <div className="col-12">
           {products.map((product, index) => {
             return (
-              <div key={index} className="row text-center mb-2 ">
+              <div
+                key={index}
+                className={cx("row", "text-center", "mb-2", styles.mobile)}
+              >
                 <div className="col-4">
                   <h3 className="text-black text-left">{product.name}</h3>
                 </div>
-                <div className="col-4">
-                  <Link
-                    className="btn btn-success"
-                    to={`/admin/product/update/${product._id}`}
-                  >
-                    <span className="">Обновить</span>
-                  </Link>
-                </div>
-                <div className="col-4">
-                  <button
-                    onClick={() => {
-                      deleteThisProduct(product._id);
-                    }}
-                    className="btn btn-danger"
-                  >
-                    Удалить
-                  </button>
+                <div className={styles.mobileButtons}>
+                  <div className="col-4">
+                    <Link
+                      className="btn btn-success"
+                      to={`/admin/product/update/${product._id}`}
+                    >
+                      <span className="">Обновить</span>
+                    </Link>
+                  </div>
+                  <div className="col-4">
+                    <button
+                      onClick={() => {
+                        deleteThisProduct(product._id);
+                      }}
+                      className="btn btn-danger"
+                    >
+                      Удалить
+                    </button>
+                  </div>
                 </div>
               </div>
             );
