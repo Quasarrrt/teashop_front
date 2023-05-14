@@ -63,13 +63,17 @@ const Card = ({
 
   return (
     <div className={styles.card}>
-      <ImageHelper product={product} />
-      <p className={styles.name}>{cartTitle}</p>
-      <p>{cartDescription}</p>
-      <p>{category}</p>
-      <p className={styles.price}>{`${cartPrice} ₽`}</p>
-      <div>{showAddtoCart(addtoCart)}</div>
-      <div>{showRemoveFromCart(removeFromCart)}</div>
+      <div className={styles.textWrapper}>
+        <ImageHelper product={product} />
+        <p className={styles.name}>{cartTitle}</p>
+        <p>{cartDescription}</p>
+        <p>{category}</p>
+        <p className={styles.price}>{`${cartPrice} ₽`}</p>
+      </div>
+      <div>
+        <div>{showAddtoCart(addtoCart)}</div>
+        <div>{showRemoveFromCart(removeFromCart)}</div>
+      </div>
     </div>
   );
 };
